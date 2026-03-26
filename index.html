@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robiul Islam — Quran Educator, Entrepreneur & Founder of Global Islamic Care</title>
+<meta name="description" content="Robiul Islam is a certified Hafez, Quran educator, and founder of Global Islamic Care — a world-class online Quran learning institution. Explore his work, projects, and Islamic education mission.">
+<meta name="keywords" content="Robiul Islam, Robiul Islam Quran, Robiul Islam Global Islamic Care, online Quran teacher Bangladesh, Hafez Robiul Islam, Islamic educator Bangladesh, robiulislam.org">
+<meta name="author" content="Robiul Islam">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Robiul Islam — Quran Educator & Founder, Global Islamic Care">
+<meta property="og:description" content="Certified Hafez, Quran educator and Islamic entrepreneur. Founder of Global Islamic Care — teaching Quran to hundreds of families worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://robiulislam.org">
+<meta property="og:site_name" content="Robiul Islam">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Robiul Islam — Quran Educator & Entrepreneur">
+<meta name="twitter:description" content="Founder of Global Islamic Care. Certified Hafez & Tajweed expert teaching families worldwide.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://robiulislam.org">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Robiul Islam",
+  "url": "https://robiulislam.org",
+  "sameAs": [
+    "https://web.facebook.com/globalislamiccare1",
+    "https://www.youtube.com/@Globalislamiccare",
+    "https://www.linkedin.com/company/global-islamic-care"
+  ],
+  "jobTitle": "Quran Educator & Islamic Entrepreneur",
+  "description": "Certified Hafez, Tajweed expert and founder of Global Islamic Care",
+  "telephone": "+8801733017521",
+  "knowsAbout": ["Quran Education", "Tajweed", "Hifz", "Islamic Studies", "Online Education"]
+}
+</script>
+
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--espresso) 0%, var(--dark-roast) 40%, #1f0c02 100%);
+  display: flex; align-items: center;
+  padding: 100px 5% 60px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,160,23,0.07) 0%, transparent 60%);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(26,58,110,0.08) 0%, transparent 60%);
+}
+.hero-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.25);
+  color: var(--gold-light); font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 8px 18px; border-radius: 50px;
+  margin-bottom: 24px;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 5vw, 68px); font-weight: 800;
+  color: white; line-height: 1.1; margin-bottom: 8px;
+}
+.hero-name .highlight { color: var(--gold); display: block; font-style: italic; }
+.hero-tagline {
+  font-size: 18px; color: var(--latte); margin-bottom: 18px;
+  font-weight: 500; letter-spacing: 0.5px;
+}
+.hero-desc {
+  font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.9;
+  margin-bottom: 36px; max-width: 480px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-right { text-align: center; position: relative; }
+.hero-avatar {
+  width: 320px; height: 320px; border-radius: 30px;
+  background: linear-gradient(145deg, var(--coffee), var(--mocha));
+  margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 100px;
+  box-shadow: 0 20px 60px rgba(10,15,30,0.5), 0 0 0 1px rgba(201,168,76,0.2);
+  position: relative; overflow: hidden;
+}
+.hero-avatar::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(45deg, transparent 60%, rgba(212,160,23,0.1));
+}
+.hero-chips {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 20px;
+}
+.hero-chip {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.2);
+  color: var(--cream); font-size: 12px; font-weight: 600;
+  padding: 7px 14px; border-radius: 50px;
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--dark-roast);
+  border-top: 1px solid rgba(196,137,74,0.15);
+  border-bottom: 1px solid rgba(196,137,74,0.15);
+  padding: 40px 5%;
+}
+.stats-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; text-align: center;
+}
+.stat-item { padding: 0 20px; border-right: 1px solid rgba(196,137,74,0.15); }
+.stat-item:last-child { border-right: none; }
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px; font-weight: 800;
+  color: var(--gold); line-height: 1; margin-bottom: 6px;
+}
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── ABOUT ── */
+.about-section { background: var(--foam); padding: 100px 5%; }
+.about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center; }
+.about-visual {
+  position: relative;
+}
+.about-card-main {
+  background: var(--espresso); border-radius: 24px; padding: 40px;
+  border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: var(--shadow-lg);
+}
+.about-arabic {
+  font-family: 'Amiri', serif; font-size: 36px; color: var(--gold);
+  direction: rtl; line-height: 1.9; margin-bottom: 12px; text-align: center;
+}
+.about-arabic-trans { font-size: 12px; color: var(--latte); text-align: center; font-style: italic; line-height: 1.7; }
+.about-skills {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px;
+}
+.skill-item {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(196,137,74,0.15);
+  border-radius: 10px; padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.skill-item .sk-icon { font-size: 18px; }
+.skill-item .sk-label { font-size: 12px; font-weight: 600; color: var(--cream); }
+
+.about-content .section-tag { }
+.about-content .section-title { text-align: left; }
+.about-content .section-sub { text-align: left; margin-bottom: 24px; }
+.about-points { display: flex; flex-direction: column; gap: 14px; }
+.about-point {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: white; border: 1px solid var(--border); border-radius: 14px; padding: 18px;
+  box-shadow: var(--shadow-sm); transition: all 0.25s;
+}
+.about-point:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.ap-icon { font-size: 22px; flex-shrink: 0; }
+.ap-text h4 { font-size: 14px; font-weight: 700; color: var(--espresso); margin-bottom: 4px; }
+.ap-text p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+/* ── EXPERTISE ── */
+.expertise-section { background: white; padding: 100px 5%; }
+.expertise-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.expertise-card {
+  border-radius: 20px; padding: 36px 28px;
+  border: 1px solid var(--border); position: relative; overflow: hidden;
+  transition: all 0.3s; cursor: default;
+  background: var(--foam);
+}
+.expertise-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--latte); }
+.expertise-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--caramel), var(--gold));
+}
+.exp-icon { font-size: 38px; margin-bottom: 16px; display: block; }
+.exp-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--espresso); margin-bottom: 10px; }
+.exp-desc { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.exp-tag { background: var(--milk); color: var(--mocha); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 50px; border: 1px solid var(--border); }
+
+/* ── LANGUAGES ── */
+.lang-section {
+  background: linear-gradient(135deg, var(--espresso), var(--coffee));
+  padding: 80px 5%;
+}
+.lang-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+.lang-left { flex: 1; min-width: 280px; }
+.lang-left h3 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 800; color: white; margin-bottom: 12px; }
+.lang-left p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+.lang-badges { display: flex; gap: 16px; flex-wrap: wrap; }
+.lang-badge {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(196,137,74,0.25);
+  border-radius: 16px; padding: 20px 24px; text-align: center; min-width: 100px;
+  transition: all 0.25s;
+}
+.lang-badge:hover { background: rgba(212,160,23,0.12); border-color: var(--gold); }
+.lang-flag { font-size: 30px; display: block; margin-bottom: 8px; }
+.lang-name { font-size: 13px; font-weight: 700; color: var(--cream); }
+
+/* ── PROJECTS TEASER ── */
+.projects-teaser { background: var(--foam); padding: 100px 5%; }
+.projects-teaser-inner { max-width: 1100px; margin: 0 auto; }
+.project-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 40px; }
+.proj-card {
+  background: white; border-radius: 20px; padding: 28px;
+  border: 1px solid var(--border); transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.proj-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.proj-card-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+.proj-card-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--espresso); margin-bottom: 8px; }
+.proj-card-desc { font-size: 13px; color: var(--text-light); line-height: 1.7; }
+.proj-card-tag { display: inline-block; margin-top: 14px; font-size: 11px; font-weight: 700; color: var(--caramel); text-transform: uppercase; letter-spacing: 1px; }
+.projects-cta { text-align: center; }
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: white; padding: 100px 5%; }
+.testi-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.testi-card {
+  background: var(--foam); border-radius: 18px; padding: 28px;
+  border: 1px solid var(--border); position: relative;
+}
+.testi-card::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 60px; color: var(--latte); opacity: 0.3; position: absolute; top: 10px; left: 20px; line-height: 1; }
+.testi-text { font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; padding-top: 20px; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.testi-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--caramel), var(--mocha)); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.testi-name { font-size: 13px; font-weight: 700; color: var(--espresso); }
+.testi-loc { font-size: 12px; color: var(--text-muted); }
+.testi-stars { color: var(--gold); font-size: 13px; margin-bottom: 12px; letter-spacing: 2px; }
+
+/* ── CONTACT CTA ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--dark-roast), var(--coffee));
+  padding: 100px 5%; text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 60%);
+}
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 48px); font-weight: 800; color: white; margin-bottom: 18px; position: relative; }
+.cta-section h2 span { color: var(--gold); font-style: italic; }
+.cta-section p { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 520px; margin: 0 auto 36px; line-height: 1.8; position: relative; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+/* ── SOCIAL STRIP ── */
+.social-strip {
+  background: var(--espresso);
+  padding: 40px 5%;
+  border-bottom: 1px solid rgba(196,137,74,0.1);
+}
+.social-strip-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.social-strip-label { font-size: 13px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; }
+.social-strip-links { display: flex; gap: 12px; }
+.ss-link {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2);
+  color: var(--cream); text-decoration: none;
+  font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 8px;
+  transition: all 0.2s;
+}
+.ss-link:hover { background: rgba(196,137,74,0.15); border-color: var(--latte); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-desc { margin: 0 auto 36px; }
+  .hero-btns { justify-content: center; }
+  .hero-chips { margin-top: 20px; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) { border-right: 1px solid rgba(196,137,74,0.15); border-top: 1px solid rgba(196,137,74,0.15); padding-top: 20px; margin-top: 20px; }
+  .stat-item:nth-child(4) { border-right: none; border-top: 1px solid rgba(196,137,74,0.15); padding-top: 20px; margin-top: 20px; }
+  .about-inner { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr 1fr; }
+  .project-cards { grid-template-columns: 1fr 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .social-strip-inner { justify-content: center; text-align: center; }
+  .social-strip-links { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 600px) {
+  .hero-avatar { width: 220px; height: 220px; font-size: 70px; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .project-cards { grid-template-columns: 1fr; }
+  .about-skills { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">RI</div>
+    <div class="logo-text">
+      <span>Robiul Islam</span>
+      <span>Educator · Entrepreneur</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="ventures.html">My Ventures</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta">Contact Me</a>
+  </div>
+  <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <div class="hero-badge">✦ Certified Hafez &amp; Islamic Educator</div>
+      <h1 class="hero-name">
+        Robiul
+        <span class="highlight">Islam</span>
+      </h1>
+      <p class="hero-tagline">Quran Educator · Entrepreneur · Founder</p>
+      <p class="hero-desc">
+        Founder of <strong style="color:var(--latte)">Global Islamic Care</strong> — a world-class online Quran learning institution serving 500+ families across Bangladesh, UK, Malaysia, and beyond. Committed to spreading the light of the Quran worldwide.
+      </p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-primary">📩 Get In Touch</a>
+        <a href="ventures.html" class="btn-outline">🌍 My Ventures</a>
+        <a href="https://wa.me/8801733017521" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-right reveal" style="transition-delay:0.15s">
+      <div class="hero-avatar">🎓</div>
+      <div class="hero-chips">
+        <span class="hero-chip">🇧🇩 বাংলা</span>
+        <span class="hero-chip">🇬🇧 English</span>
+        <span class="hero-chip">🇸🇦 عربى</span>
+        <span class="hero-chip">📖 Hafez</span>
+        <span class="hero-chip">🌍 Global</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Students Taught</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.1s">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.2s">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Languages</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.3s">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Countries Reached</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-card-main">
+        <div class="about-arabic">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</div>
+        <p class="about-arabic-trans">"And recite the Quran with measured recitation." — Surah Al-Muzzammil: 4</p>
+        <div class="about-skills">
+          <div class="skill-item"><span class="sk-icon">📖</span><span class="sk-label">Full Hafez</span></div>
+          <div class="skill-item"><span class="sk-icon">🎯</span><span class="sk-label">Tajweed Expert</span></div>
+          <div class="skill-item"><span class="sk-icon">🕌</span><span class="sk-label">Makhraj</span></div>
+          <div class="skill-item"><span class="sk-icon">🏅</span><span class="sk-label">Int'l Certified</span></div>
+          <div class="skill-item"><span class="sk-icon">👶</span><span class="sk-label">Child-Friendly</span></div>
+          <div class="skill-item"><span class="sk-icon">🌐</span><span class="sk-label">Online Expert</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-content reveal" style="transition-delay:0.15s">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">Passionate About <span>Quranic Education</span></h2>
+      <p class="section-sub">I am Robiul Islam — a certified Hafez, Tajweed specialist, and Islamic entrepreneur from Bangladesh. I founded Global Islamic Care to make world-class Quran education accessible to every Muslim family, wherever they are.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="ap-icon">🎓</div>
+          <div class="ap-text">
+            <h4>Certified Hafez & Tajweed Specialist</h4>
+            <p>Full Quran Hafez with international Tajweed certification. 10+ years of dedicated teaching experience.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">🏢</div>
+          <div class="ap-text">
+            <h4>Founder — Global Islamic Care</h4>
+            <p>Built one of Bangladesh's leading online Quran institutions, now serving families in 15+ countries.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">🌍</div>
+          <div class="ap-text">
+            <h4>Trilingual Educator</h4>
+            <p>Teaching fluently in Bengali, English and Arabic — reaching students from any background.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">💡</div>
+          <div class="ap-text">
+            <h4>Islamic Entrepreneur</h4>
+            <p>Combining Islamic values with modern education and digital business to create lasting impact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise-section">
+  <div class="section-header reveal">
+    <div class="section-tag">Expertise</div>
+    <h2 class="section-title">What I <span>Specialize In</span></h2>
+    <p class="section-sub">A decade of mastery across Quranic sciences, education methodology and Islamic entrepreneurship.</p>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-card reveal">
+      <span class="exp-icon">📖</span>
+      <div class="exp-title">Hifz (Quran Memorization)</div>
+      <p class="exp-desc">Specialized techniques for memorizing the full Quran with speed and retention. Daily routines, revision methods, and personalized guidance for students of all ages.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Memorization</span>
+        <span class="exp-tag">Revision</span>
+        <span class="exp-tag">Routine</span>
+      </div>
+    </div>
+    <div class="expertise-card reveal" style="transition-delay:0.1s">
+      <span class="exp-icon">🎯</span>
+      <div class="exp-title">Tajweed & Makhraj</div>
+      <p class="exp-desc">Mastery in the rules of Tajweed and proper articulation points (Makhraj). Ensuring every student recites the Quran with correct pronunciation and beautiful flow.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Tajweed Rules</span>
+        <span class="exp-tag">Makhraj</span>
+        <span class="exp-tag">Tilawah</span>
+      </div>
+    </div>
+    <div class="expertise-card reveal" style="transition-delay:0.2s">
+      <span class="exp-icon">🌐</span>
+      <div class="exp-title">Online Quran Teaching</div>
+      <p class="exp-desc">Expert in delivering interactive live online classes through Zoom and digital tools. Making quality Quran education accessible from anywhere in the world.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Live Classes</span>
+        <span class="exp-tag">One-to-One</span>
+        <span class="exp-tag">Group Batch</span>
+      </div>
+    </div>
+    <div class="expertise-card reveal" style="transition-delay:0.1s">
+      <span class="exp-icon">👶</span>
+      <div class="exp-title">Children's Quran Education</div>
+      <p class="exp-desc">Child-friendly pedagogy designed for young learners. Fun, engaging, and effective methods that build a lifelong love for the Quran from an early age.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Noorani Qaida</span>
+        <span class="exp-tag">Basic Recitation</span>
+        <span class="exp-tag">Kids Hifz</span>
+      </div>
+    </div>
+    <div class="expertise-card reveal" style="transition-delay:0.2s">
+      <span class="exp-icon">🏢</span>
+      <div class="exp-title">Islamic Entrepreneurship</div>
+      <p class="exp-desc">Founded and scaled multiple Islamic education ventures. Experience in online business development, team building, and creating halal income streams.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">Startup</span>
+        <span class="exp-tag">Team Building</span>
+        <span class="exp-tag">Growth</span>
+      </div>
+    </div>
+    <div class="expertise-card reveal" style="transition-delay:0.3s">
+      <span class="exp-icon">✍️</span>
+      <div class="exp-title">Islamic Content Creation</div>
+      <p class="exp-desc">Creating educational Islamic content in Bengali, English and Arabic. Blog posts, social media, and video content that reaches thousands of Muslims globally.</p>
+      <div class="exp-tags">
+        <span class="exp-tag">YouTube</span>
+        <span class="exp-tag">Blog</span>
+        <span class="exp-tag">Social Media</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="lang-section">
+  <div class="lang-inner">
+    <div class="lang-left reveal">
+      <h3>Teaching in 3 Languages</h3>
+      <p>I communicate and teach fluently in three languages, allowing me to connect with students from Bangladesh, UK, Malaysia, the Middle East, and beyond — making Islamic education truly borderless.</p>
+    </div>
+    <div class="lang-badges reveal" style="transition-delay:0.1s">
+      <div class="lang-badge">
+        <span class="lang-flag">🇧🇩</span>
+        <div class="lang-name">বাংলা</div>
+      </div>
+      <div class="lang-badge">
+        <span class="lang-flag">🇬🇧</span>
+        <div class="lang-name">English</div>
+      </div>
+      <div class="lang-badge">
+        <span class="lang-flag">🇸🇦</span>
+        <div class="lang-name">عربى</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS TEASER -->
+<section class="projects-teaser">
+  <div class="projects-teaser-inner">
+    <div class="section-header reveal">
+      <div class="section-tag">My Ventures</div>
+      <h2 class="section-title">Projects & <span>Initiatives</span></h2>
+      <p class="section-sub">A glimpse of the work I do beyond the classroom — building Islamic education ecosystems.</p>
+    </div>
+    <div class="project-cards">
+      <div class="proj-card reveal">
+        <span class="proj-card-icon">🕌</span>
+        <div class="proj-card-title">Global Islamic Care</div>
+        <p class="proj-card-desc">Founded and built an online Quran institution serving 500+ families in 15+ countries with certified Hafez teachers.</p>
+        <span class="proj-card-tag">Education · Flagship</span>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:0.1s">
+        <span class="proj-card-icon">📚</span>
+        <div class="proj-card-title">Quran Learning Blog</div>
+        <p class="proj-card-desc">Publishing Tajweed guides, Hifz strategies, and Islamic knowledge in Bengali, English and Arabic for global readers.</p>
+        <span class="proj-card-tag">Content · Education</span>
+      </div>
+      <div class="proj-card reveal" style="transition-delay:0.2s">
+        <span class="proj-card-icon">▶️</span>
+        <div class="proj-card-title">YouTube Channel</div>
+        <p class="proj-card-desc">Educational Islamic videos covering Quran recitation, Tajweed lessons and spiritual content for Muslim families.</p>
+        <span class="proj-card-tag">Media · Dawah</span>
+      </div>
+    </div>
+    <div class="projects-cta reveal">
+      <a href="ventures.html" class="btn-primary" style="font-size:16px; padding:16px 40px;">View All My Ventures →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header reveal">
+    <div class="section-tag">Testimonials</div>
+    <h2 class="section-title">What <span>Students Say</span></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">Ustaz Robiul is incredibly patient and knowledgeable. My son completed Noorani Qaida in just 3 months. His teaching method is truly exceptional.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div>
+          <div class="testi-name">Ahmed Al-Rashid</div>
+          <div class="testi-loc">🇬🇧 United Kingdom</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:0.1s">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">আমার মেয়ে মাত্র ৬ মাসে পবিত্র কোরআন সহি তেলাওয়াত শিখে ফেলেছে। উস্তাদ রবিউল ইসলামের শিক্ষাপদ্ধতি অসাধারণ।</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div>
+          <div class="testi-name">ফারহানা বেগম</div>
+          <div class="testi-loc">🇧🇩 ঢাকা, বাংলাদেশ</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="transition-delay:0.2s">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">My daughter has been learning with Ustaz Robiul for over a year. His dedication and professionalism are unmatched. Highly recommended for any family.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">👤</div>
+        <div>
+          <div class="testi-name">Siti Nurhaliza</div>
+          <div class="testi-loc">🇲🇾 Kuala Lumpur, Malaysia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Let's Work <span>Together</span></h2>
+  <p>Whether you want to enroll in a Quran course, collaborate on an Islamic project, or simply connect — I'd love to hear from you.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-gold" style="font-size:16px; padding:16px 36px;">📩 Send a Message</a>
+    <a href="https://wa.me/8801733017521" target="_blank" class="btn-whatsapp" style="font-size:16px; padding:16px 36px;">💬 WhatsApp Me</a>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <div class="social-strip-inner">
+    <span class="social-strip-label">Follow My Journey</span>
+    <div class="social-strip-links">
+      <a class="ss-link" href="https://web.facebook.com/globalislamiccare1" target="_blank">f Facebook</a>
+      <a class="ss-link" href="https://www.youtube.com/@Globalislamiccare" target="_blank">▶ YouTube</a>
+      <a class="ss-link" href="https://www.linkedin.com/company/global-islamic-care" target="_blank">in LinkedIn</a>
+      <a class="ss-link" href="https://wa.me/8801733017521" target="_blank">✆ WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-mark" style="width:50px;height:50px;font-size:22px;border-radius:12px;">RI</div>
+      <p>Robiul Islam — Quran Educator, Islamic Entrepreneur &amp; Founder of Global Islamic Care. Spreading the light of the Quran, one student at a time.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://web.facebook.com/globalislamiccare1" target="_blank">f</a>
+        <a class="social-link" href="https://www.youtube.com/@Globalislamiccare" target="_blank">▶</a>
+        <a class="social-link" href="https://www.linkedin.com/company/global-islamic-care" target="_blank">in</a>
+        <a class="social-link wa" href="https://wa.me/8801733017521" target="_blank">✆</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ventures.html">My Ventures</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>My Projects</h4>
+      <ul>
+        <li><a href="https://globalislamiccare.com" target="_blank">Global Islamic Care</a></li>
+        <li><a href="https://www.youtube.com/@Globalislamiccare" target="_blank">YouTube Channel</a></li>
+        <li><a href="blog.html">Quran Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/8801733017521" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:info@globalislamiccare.com">Email Me</a></li>
+        <li><a href="contact.html">Message Form</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Robiul Islam. All rights reserved.</span>
+    <span><a href="https://globalislamiccare.com" target="_blank">Global Islamic Care</a> · <a href="https://web.facebook.com/globalislamiccare1" target="_blank">Facebook</a></span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/8801733017521" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+</script>
+</body>
+</html>

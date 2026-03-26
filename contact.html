@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Robiul Islam — Book a Free Quran Consultation</title>
+<meta name="description" content="Contact Robiul Islam directly via WhatsApp, email, or the message form. Book a free Quran class consultation or collaborate on an Islamic project.">
+<meta name="keywords" content="contact Robiul Islam, book Quran class, Robiul Islam WhatsApp, Robiul Islam email, free Quran consultation">
+<meta name="author" content="Robiul Islam">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://robiulislam.org/contact.html">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-section { background: var(--foam); padding: 90px 5%; }
+  .contact-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+
+  /* Contact Info */
+  .contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 800; color: var(--espresso); margin-bottom: 24px;
+  }
+  .contact-link-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px; background: white; border-radius: 14px;
+    border: 2px solid var(--border); margin-bottom: 14px;
+    text-decoration: none; transition: all 0.25s; cursor: pointer;
+  }
+  .contact-link-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .contact-link-item.whatsapp:hover { border-color: var(--whatsapp); }
+  .contact-link-item.email:hover { border-color: var(--caramel); }
+  .ci-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+  .ci-text label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px; cursor: pointer; }
+  .ci-value { font-size: 15px; font-weight: 700; }
+  .ci-desc { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
+  .ci-value-green { color: var(--whatsapp); }
+  .ci-value-brown { color: var(--caramel); }
+
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px; background: white; border-radius: 14px;
+    border: 1px solid var(--border); margin-bottom: 14px;
+  }
+  .contact-item .ci-text label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+  .contact-item .ci-text span { font-size: 14px; color: var(--text-mid); font-weight: 500; }
+  .info-note {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1px solid #bbf7d0; border-radius: 14px;
+    padding: 18px; font-size: 13px; color: #15803d; font-weight: 500; line-height: 1.7;
+  }
+
+  /* Form */
+  .contact-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 800; color: var(--espresso); margin-bottom: 24px;
+  }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { font-size: 13px; font-weight: 600; color: var(--text-mid); display: block; margin-bottom: 7px; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%; padding: 13px 18px; border-radius: 10px;
+    border: 1.5px solid var(--border);
+    font-size: 14px; font-family: 'DM Sans', sans-serif;
+    background: white; color: var(--text-dark); transition: border-color 0.2s; outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--caramel); }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .form-note { text-align: center; margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+  .form-note a { color: var(--caramel); font-weight: 600; text-decoration: none; }
+
+  /* Social Section */
+  .social-section { background: white; padding: 70px 5%; }
+  .social-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+  .social-grid { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+  .social-btn {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 26px; border-radius: 12px;
+    text-decoration: none; font-size: 14px; font-weight: 700;
+    transition: all 0.25s;
+  }
+  .social-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .social-btn.fb { background: #1877f2; color: white; }
+  .social-btn.yt { background: #ff0000; color: white; }
+  .social-btn.li { background: #0a66c2; color: white; }
+  .social-btn.wa { background: #25d366; color: white; }
+
+  /* Availability Banner */
+  .avail-banner {
+    background: linear-gradient(135deg, var(--espresso), var(--coffee));
+    padding: 50px 5%; text-align: center;
+  }
+  .avail-inner { max-width: 700px; margin: 0 auto; }
+  .avail-banner h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 800; color: white; margin-bottom: 12px;
+  }
+  .avail-banner p { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 28px; }
+  .avail-times { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  .avail-time {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(196,137,74,0.25);
+    color: var(--cream); font-size: 13px; font-weight: 600;
+    padding: 10px 20px; border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-inner { grid-template-columns: 1fr; }
+    .social-grid { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">RI</div>
+    <div class="logo-text">
+      <span>Robiul Islam</span>
+      <span>Educator · Entrepreneur</span>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="ventures.html">My Ventures</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="nav-cta active">Contact Me</a>
+  </div>
+  <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact</span></div>
+  <h1>Let's <span>Connect</span></h1>
+  <p>Whether you want to book a free Quran class, explore collaboration, or simply say salam — I'm happy to hear from you.</p>
+</div>
+
+<!-- Availability -->
+<section class="avail-banner">
+  <div class="avail-inner reveal">
+    <h3>🟢 Currently Accepting Students</h3>
+    <p>I am currently taking new Quran students for one-to-one and group Hifz batches. Limited spots available.</p>
+    <div class="avail-times">
+      <span class="avail-time">🕗 Sat–Wed: 8am – 10pm</span>
+      <span class="avail-time">🌍 All Time Zones</span>
+      <span class="avail-time">⚡ Fast Response</span>
+    </div>
+    <a href="https://wa.me/8801733017521?text=Assalamualaikum%2C%20I%20would%20like%20to%20book%20a%20free%20Quran%20class%20consultation." target="_blank" class="btn-whatsapp" style="font-size:16px; padding:16px 36px;">💬 Book Free Trial on WhatsApp</a>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-inner">
+    <!-- Info -->
+    <div class="contact-info reveal">
+      <h3>📍 Reach Me Directly</h3>
+
+      <a class="contact-link-item whatsapp"
+         href="https://wa.me/8801733017521?text=Assalamualaikum%2C%20I%20would%20like%20to%20connect%20with%20you."
+         target="_blank">
+        <div class="ci-icon">💬</div>
+        <div class="ci-text">
+          <label>WhatsApp (Preferred)</label>
+          <div class="ci-value ci-value-green">+880 1733-017521</div>
+          <div class="ci-desc">Click to open WhatsApp chat → fastest response</div>
+        </div>
+      </a>
+
+      <a class="contact-link-item email" href="mailto:info@globalislamiccare.com" target="_blank">
+        <div class="ci-icon">📧</div>
+        <div class="ci-text">
+          <label>Email</label>
+          <div class="ci-value ci-value-brown">info@globalislamiccare.com</div>
+          <div class="ci-desc">Click to open your email app</div>
+        </div>
+      </a>
+
+      <div class="contact-item">
+        <div class="ci-icon">🕐</div>
+        <div class="ci-text">
+          <label>Availability</label>
+          <span>Saturday – Wednesday, 8:00 AM – 10:00 PM (BST)</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci-icon">🌍</div>
+        <div class="ci-text">
+          <label>Based In</label>
+          <span>Bangladesh 🇧🇩 · Serving Worldwide</span>
+        </div>
+      </div>
+
+      <div class="info-note">
+        💡 For the fastest response, send me a <strong>WhatsApp message</strong> directly. I personally reply to all enquiries, In sha Allah.
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="contact-form reveal" style="transition-delay:0.1s">
+      <h3>💬 Send Me a Message</h3>
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" id="f-name" placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp *</label>
+        <input type="tel" id="f-phone" placeholder="+880 1XXXXXXXXX or +44...">
+      </div>
+      <div class="form-group">
+        <label>Purpose</label>
+        <select id="f-purpose">
+          <option>Book a Quran Class</option>
+          <option>Free Trial Class</option>
+          <option>Collaboration / Partnership</option>
+          <option>General Enquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message (Optional)</label>
+        <textarea id="f-msg" placeholder="Tell me a bit about what you're looking for..."></textarea>
+      </div>
+      <button class="btn-whatsapp" style="width:100%; font-size:16px; padding:16px;" onclick="sendToWhatsApp()">
+        💬 Send via WhatsApp
+      </button>
+      <p class="form-note">
+        Or email directly: <a href="mailto:info@globalislamiccare.com">info@globalislamiccare.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Social Links -->
+<section class="social-section">
+  <div class="social-inner reveal">
+    <div class="section-tag">Stay Connected</div>
+    <h2 class="section-title">Follow My <span>Journey</span></h2>
+    <p class="section-sub" style="margin:0 auto;">Join thousands of Muslims following my work in Quran education and Islamic entrepreneurship.</p>
+    <div class="social-grid">
+      <a class="social-btn fb" href="https://web.facebook.com/globalislamiccare1" target="_blank">
+        <span>f</span> Follow on Facebook
+      </a>
+      <a class="social-btn yt" href="https://www.youtube.com/@Globalislamiccare" target="_blank">
+        <span>▶</span> Subscribe on YouTube
+      </a>
+      <a class="social-btn li" href="https://www.linkedin.com/company/global-islamic-care" target="_blank">
+        <span>in</span> Connect on LinkedIn
+      </a>
+      <a class="social-btn wa" href="https://wa.me/8801733017521" target="_blank">
+        <span>✆</span> WhatsApp Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/8801733017521" target="_blank" title="Chat on WhatsApp">💬</a>
+<div class="toast" id="toast">✅ Opening WhatsApp...</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo-mark" style="width:50px;height:50px;font-size:22px;border-radius:12px;">RI</div>
+      <p>Robiul Islam — Quran Educator, Islamic Entrepreneur &amp; Founder of Global Islamic Care.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://web.facebook.com/globalislamiccare1" target="_blank">f</a>
+        <a class="social-link" href="https://www.youtube.com/@Globalislamiccare" target="_blank">▶</a>
+        <a class="social-link" href="https://www.linkedin.com/company/global-islamic-care" target="_blank">in</a>
+        <a class="social-link wa" href="https://wa.me/8801733017521" target="_blank">✆</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="ventures.html">My Ventures</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>My Projects</h4><ul><li><a href="https://globalislamiccare.com" target="_blank">Global Islamic Care</a></li><li><a href="https://www.youtube.com/@Globalislamiccare" target="_blank">YouTube Channel</a></li></ul></div>
+    <div class="footer-col"><h4>Direct Contact</h4><ul><li><a href="https://wa.me/8801733017521" target="_blank">WhatsApp</a></li><li><a href="mailto:info@globalislamiccare.com">Email</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Robiul Islam. All rights reserved.</span>
+    <span><a href="https://globalislamiccare.com" target="_blank">Global Islamic Care</a></span>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  function sendToWhatsApp() {
+    var name = document.getElementById('f-name').value.trim();
+    var phone = document.getElementById('f-phone').value.trim();
+    var purpose = document.getElementById('f-purpose').value;
+    var msg = document.getElementById('f-msg').value.trim();
+    var text = 'Assalamualaikum, I am reaching out via robiulislam.org\n\n'
+             + 'Name: ' + (name || 'Not provided') + '\n'
+             + 'Phone: ' + (phone || 'Not provided') + '\n'
+             + 'Purpose: ' + purpose;
+    if (msg) text += '\nMessage: ' + msg;
+    var toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+    window.open('https://wa.me/8801733017521?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
+</body>
+</html>
