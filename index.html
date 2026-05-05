@@ -6,664 +6,840 @@
 <title>Robiul Islam | robiulislam.org</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --blue-deep: #0a2463;
-    --blue-mid: #1565c0;
-    --blue-bright: #1e88e5;
-    --blue-light: #e3f2fd;
-    --blue-accent: #29b6f6;
-    --gold: #f5a623;
-    --gold-light: #fff8e1;
-    --white: #ffffff;
-    --text-dark: #0d1b2a;
-    --text-mid: #3a4a5c;
-    --text-light: #7a8a9a;
-    --border: #d0e4f7;
-    --shadow: 0 8px 40px rgba(10,36,99,0.13);
-    --radius: 18px;
-  }
+:root {
+  --navy: #05103a;
+  --blue: #0a2a8c;
+  --blue-mid: #1a4fd6;
+  --blue-bright: #2d7dff;
+  --cyan: #00c6ff;
+  --gold: #e8a020;
+  --gold-light: #fdf3dc;
+  --white: #ffffff;
+  --off-white: #f0f5ff;
+  --text: #0d1733;
+  --text-mid: #3a4a6b;
+  --text-soft: #8090b0;
+  --border: #d4e2f8;
+  --card-bg: #ffffff;
+  --radius: 20px;
+  --shadow-sm: 0 4px 20px rgba(5,16,58,0.10);
+  --shadow: 0 10px 50px rgba(5,16,58,0.16);
+  --shadow-lg: 0 24px 80px rgba(5,16,58,0.22);
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Noto Sans Bengali', sans-serif;
-    background: #f4f8ff;
-    color: var(--text-dark);
-    min-height: 100vh;
-  }
+html { scroll-behavior: smooth; }
 
-  /* ===== TOP NAV ===== */
-  .top-nav {
-    background: var(--blue-deep);
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 62px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 20px rgba(10,36,99,0.25);
-  }
-  .brand-name {
-    font-family: 'Playfair Display', serif;
-    color: var(--white);
-    font-size: 1.35rem;
-    letter-spacing: 0.5px;
-    font-weight: 700;
-  }
-  .brand-name span {
-    color: var(--blue-accent);
-  }
-  .nav-switch-btn {
-    background: linear-gradient(135deg, var(--blue-accent), var(--blue-bright));
-    color: #fff;
-    border: none;
-    padding: 9px 22px;
-    border-radius: 50px;
-    font-family: 'Noto Sans Bengali', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    letter-spacing: 0.3px;
-    transition: all 0.25s;
-    box-shadow: 0 3px 12px rgba(29,136,229,0.35);
-  }
-  .nav-switch-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(29,136,229,0.45);
-  }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  /* ===== PAGES ===== */
-  .page { display: none; }
-  .page.active { display: block; }
+/* ===== STICKY NAV ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(5, 16, 58, 0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  box-shadow: 0 4px 30px rgba(5,16,58,0.3);
+}
 
-  /* ===== HERO SECTION ===== */
-  .hero {
-    background: linear-gradient(135deg, var(--blue-deep) 0%, #0d3b8f 50%, var(--blue-mid) 100%);
-    padding: 64px 24px 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: rgba(41,182,246,0.08);
-    pointer-events: none;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -50px;
-    width: 250px; height: 250px;
-    border-radius: 50%;
-    background: rgba(245,166,35,0.06);
-    pointer-events: none;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(41,182,246,0.15);
-    border: 1px solid rgba(41,182,246,0.35);
-    color: var(--blue-accent);
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 5px 16px;
-    border-radius: 50px;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-  .hero-subtitle {
-    font-family: 'Amiri', serif;
-    font-size: 1.1rem;
-    color: var(--gold);
-    margin-bottom: 22px;
-    font-style: italic;
-  }
-  .hero-desc {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.88);
-    max-width: 580px;
-    margin: 0 auto 28px;
-    line-height: 1.8;
-  }
-  .hero-info-cards {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-  .info-card {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 12px;
-    padding: 12px 22px;
-    color: #fff;
-    font-size: 0.9rem;
-    backdrop-filter: blur(8px);
-  }
-  .info-card .ic-label {
-    font-size: 0.72rem;
-    color: var(--blue-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
-  }
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-brand span { color: var(--cyan); }
 
-  /* ===== SECTION WRAPPER ===== */
-  .section-wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 48px 20px 0;
-  }
+.nav-tabs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
 
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--blue-deep);
-    margin-bottom: 6px;
-  }
-  .section-divider {
-    width: 48px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--blue-bright), var(--blue-accent));
-    border-radius: 2px;
-    margin-bottom: 28px;
-  }
+.nav-tab {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.22s;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+.nav-tab:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.08);
+}
+.nav-tab.active {
+  background: var(--blue-bright);
+  color: var(--white);
+  font-weight: 600;
+  box-shadow: 0 2px 14px rgba(45,125,255,0.45);
+}
 
-  /* ===== FORM ===== */
-  .form-card {
-    background: #fff;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 36px 32px;
-    border: 1px solid var(--border);
-  }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  .form-group label {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text-mid);
-    margin-bottom: 8px;
-    letter-spacing: 0.2px;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 13px 16px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    font-family: 'Noto Sans Bengali', sans-serif;
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    background: #f8fbff;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-  }
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: var(--blue-bright);
-    box-shadow: 0 0 0 3px rgba(30,136,229,0.12);
-    background: #fff;
-  }
-  .form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  .radio-group {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .radio-option {
-    flex: 1;
-    min-width: 140px;
-  }
-  .radio-option input[type="radio"] { display: none; }
-  .radio-option label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s;
-    background: #f8fbff;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .radio-option input[type="radio"]:checked + label {
-    border-color: var(--blue-bright);
-    background: var(--blue-light);
-    color: var(--blue-deep);
-    font-weight: 700;
-    box-shadow: 0 2px 10px rgba(30,136,229,0.15);
-  }
-  .budget-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
+/* ===== PAGE SYSTEM ===== */
+.page { display: none; padding-top: 64px; min-height: 100vh; }
+.page.active { display: block; }
 
-  /* ===== BUTTONS ===== */
-  .btn-submit-wa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-family: 'Noto Sans Bengali', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s;
-    box-shadow: 0 4px 16px rgba(37,211,102,0.35);
-    text-decoration: none;
-    margin-top: 10px;
-  }
-  .btn-submit-wa:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(37,211,102,0.45);
-  }
+/* ===== HERO BASE ===== */
+.hero {
+  background: linear-gradient(145deg, var(--navy) 0%, #071870 55%, #0a2a8c 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 72px 28px 64px;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(0,198,255,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(232,160,32,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
 
-  /* ===== CONFIRMATION ===== */
-  .confirmation-msg {
-    display: none;
-    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
-    border: 1.5px solid #a5d6a7;
-    border-radius: 14px;
-    padding: 24px;
-    text-align: center;
-    margin-top: 16px;
-  }
-  .confirmation-msg .conf-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  .confirmation-msg .conf-title {
-    font-family: 'Amiri', serif;
-    font-size: 1.4rem;
-    color: #2e7d32;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .confirmation-msg p {
-    font-size: 0.95rem;
-    color: #388e3c;
-    line-height: 1.6;
-  }
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 660px;
+  margin: 0 auto;
+}
 
-  /* ===== SOCIAL ===== */
-  .social-section {
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-  .social-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-light);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-  }
-  .social-icons {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .social-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.3rem;
-    transition: all 0.22s;
-    font-weight: 700;
-    color: #fff;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-  }
-  .social-icon:hover { transform: translateY(-4px) scale(1.08); }
-  .si-wa  { background: linear-gradient(135deg, #25d366, #128c7e); }
-  .si-fb  { background: linear-gradient(135deg, #1877f2, #0e5bb5); }
-  .si-yt  { background: linear-gradient(135deg, #ff0000, #cc0000); }
-  .si-ig  { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-  .si-li  { background: linear-gradient(135deg, #0077b5, #005582); }
-  .si-tw  { background: linear-gradient(135deg, #000000, #333); }
-  .si-tt  { background: linear-gradient(135deg, #010101, #69c9d0); }
-  .si-em  { background: linear-gradient(135deg, var(--blue-bright), var(--blue-deep)); }
-  .si-pin { background: linear-gradient(135deg, #e60023, #ad081b); }
-  .si-snap{ background: linear-gradient(135deg, #fffc00, #f5d100); }
-  .si-snap svg { color: #000; }
-  .si-tg  { background: linear-gradient(135deg, #2ca5e0, #1a85c2); }
-  .si-gh  { background: linear-gradient(135deg, #24292e, #444d56); }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,198,255,0.12);
+  border: 1px solid rgba(0,198,255,0.3);
+  color: var(--cyan);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 22px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
 
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--blue-deep);
-    color: rgba(255,255,255,0.8);
-    padding: 44px 24px 24px;
-    margin-top: 48px;
-  }
-  .footer-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .footer-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .footer-tagline {
-    font-size: 0.88rem;
-    color: var(--blue-accent);
-    margin-bottom: 28px;
-  }
-  .footer-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-  }
-  .footer-links a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    font-size: 0.85rem;
-    padding: 7px 14px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 50px;
-    transition: all 0.2s;
-  }
-  .footer-links a:hover {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-    border-color: rgba(255,255,255,0.3);
-  }
-  .footer-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    margin: 20px 0;
-  }
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.45);
-  }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
 
-  /* ===== DIGITAL MARKETER HERO ===== */
-  .hero-marketer {
-    background: linear-gradient(135deg, #0a1628 0%, var(--blue-deep) 40%, #0d3b8f 100%);
-  }
-  .hero-marketer .hero-badge {
-    background: rgba(245,166,35,0.12);
-    border-color: rgba(245,166,35,0.3);
-    color: var(--gold);
-  }
+.hero-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+  direction: rtl;
+}
 
-  .services-highlight {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-  .service-chip {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 10px;
-    padding: 10px 14px;
-    color: rgba(255,255,255,0.9);
-    font-size: 0.82rem;
-    text-align: center;
-    backdrop-filter: blur(6px);
-  }
-  .service-chip .chip-icon { font-size: 1.3rem; margin-bottom: 5px; display: block; }
+.hero-desc {
+  font-size: 1.02rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.75;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
 
-  /* responsive */
-  @media (max-width: 500px) {
-    .form-card { padding: 24px 18px; }
-    .hero { padding: 48px 16px 44px; }
-    .budget-group { grid-template-columns: 1fr 1fr; }
-    .footer-bottom { flex-direction: column; align-items: flex-start; }
-  }
+/* Info cards in hero */
+.info-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.info-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  padding: 9px 20px;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.info-chip .ic-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+}
+.info-chip.gold-dot .ic-dot { background: var(--gold); }
+
+/* ===== PRICING BADGE ===== */
+.price-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--gold), #f5c842);
+  border-radius: 50px;
+  padding: 10px 28px;
+  margin: 18px auto 0;
+  box-shadow: 0 6px 24px rgba(232,160,32,0.4);
+}
+.price-tag .amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.price-tag .period {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.75;
+}
+
+/* ===== SECTION WRAPPER ===== */
+.section-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 52px 24px 0;
+}
+
+.section-head {
+  margin-bottom: 30px;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--blue-bright);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.section-bar {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-bright), var(--cyan));
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+/* ===== FEATURES GRID ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  transition: all 0.25s;
+  box-shadow: var(--shadow-sm);
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: rgba(45,125,255,0.3);
+}
+.feature-icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: block;
+}
+.feature-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.feature-desc {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+/* ===== SERVICE CHIPS (marketer page) ===== */
+.services-highlight {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 26px;
+}
+.service-chip {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s;
+}
+.service-chip:hover {
+  background: rgba(45,125,255,0.25);
+  border-color: rgba(45,125,255,0.4);
+}
+
+/* ===== FORM ===== */
+.form-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+  border: 1px solid var(--border);
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  margin-bottom: 9px;
+  letter-spacing: 0.2px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #f7fbff;
+  transition: all 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-bright);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(45,125,255,0.1);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.radio-option { flex: 1; min-width: 130px; }
+.radio-option input[type="radio"] { display: none; }
+.radio-option label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  background: #f7fbff;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+.radio-option input[type="radio"]:checked + label {
+  border-color: var(--blue-bright);
+  background: #e8f0ff;
+  color: var(--blue);
+  font-weight: 700;
+  box-shadow: 0 2px 12px rgba(45,125,255,0.18);
+}
+
+.budget-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: linear-gradient(135deg, #25d366, #1da851);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 17px 28px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  box-shadow: 0 6px 28px rgba(37,211,102,0.35);
+  transition: all 0.25s;
+  margin-top: 6px;
+}
+.btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(37,211,102,0.45);
+}
+.btn-wa:active { transform: translateY(0); }
+
+/* ===== CONFIRMATION ===== */
+.confirmation-msg {
+  display: none;
+  text-align: center;
+  margin-top: 22px;
+  background: linear-gradient(135deg, #e8f5e9, #f1fff4);
+  border: 1px solid #a5d6a7;
+  border-radius: 14px;
+  padding: 26px 24px;
+}
+.conf-icon { font-size: 2.2rem; margin-bottom: 8px; }
+.conf-title {
+  font-family: 'Amiri', serif;
+  font-size: 1.3rem;
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+.confirmation-msg p { font-size: 0.92rem; color: #388e3c; }
+
+/* ===== SOCIAL SECTION ===== */
+.social-section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 52px;
+  text-align: center;
+}
+.social-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--text-mid);
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.social-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.22s;
+  font-size: 1.1rem;
+}
+.social-icon:hover { transform: translateY(-3px) scale(1.08); }
+
+.si-wa { background: #25d366; color: #fff; }
+.si-fb { background: #1877f2; color: #fff; }
+.si-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); color: #fff; }
+.si-yt { background: #ff0000; color: #fff; }
+.si-li { background: #0077b5; color: #fff; }
+.si-tt { background: #000; color: #fff; }
+.si-tw { background: #000; color: #fff; }
+.si-tg { background: #0088cc; color: #fff; }
+.si-pin { background: #e60023; color: #fff; }
+.si-snap { background: #fffc00; color: #000; }
+.si-gh { background: #24292e; color: #fff; }
+.si-em { background: var(--blue-mid); color: #fff; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy);
+  padding: 40px 28px 28px;
+}
+.footer-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.footer-tagline {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 22px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--cyan); }
+.footer-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 16px;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ===== PAGE-SPECIFIC HERO ACCENTS ===== */
+.hero-quran::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(232,160,32,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(0,198,255,0.12) 0%, transparent 60%);
+}
+.hero-english::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(45,125,255,0.2) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(0,198,255,0.15) 0%, transparent 60%);
+}
+.hero-arabic::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(100,200,120,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(232,160,32,0.12) 0%, transparent 60%);
+}
+.hero-digital::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(0,198,255,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(45,125,255,0.14) 0%, transparent 60%);
+}
+
+/* ===== HIGHLIGHT BOX ===== */
+.highlight-box {
+  background: linear-gradient(135deg, #e8f0ff, #f0f7ff);
+  border: 1.5px solid rgba(45,125,255,0.2);
+  border-left: 4px solid var(--blue-bright);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 36px;
+}
+.highlight-box .hb-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.highlight-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.highlight-box li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
+.highlight-box li::before {
+  content: '✓';
+  color: var(--blue-bright);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* ===== FREE COUNSELING BANNER ===== */
+.free-banner {
+  background: linear-gradient(135deg, var(--gold), #f5c842);
+  border-radius: 14px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 24px rgba(232,160,32,0.3);
+}
+.free-banner .fb-icon { font-size: 1.6rem; flex-shrink: 0; }
+.free-banner .fb-text { font-weight: 700; font-size: 0.95rem; color: var(--navy); }
+.free-banner .fb-sub { font-size: 0.8rem; color: rgba(5,16,58,0.65); margin-top: 2px; }
+
+/* ===== DIGITAL MARKETING PROCESS ===== */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 40px;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 28px;
+  bottom: 28px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--blue-bright), var(--cyan));
+  border-radius: 2px;
+}
+.process-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+.step-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-bright), var(--blue-mid));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 14px rgba(45,125,255,0.35);
+}
+.step-content .step-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.step-content .step-desc {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .nav-tabs { gap: 2px; }
+  .nav-tab { padding: 6px 10px; font-size: 0.75rem; }
+  .nav { padding: 0 14px; }
+  .hero { padding: 52px 18px 48px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 28px 20px; }
+  .budget-group { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; align-items: center; }
+  .nav-brand { font-size: 1.1rem; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-inner > * {
+  animation: fadeUp 0.55s ease both;
+}
+.hero-inner > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.12s; }
+.hero-inner > *:nth-child(3) { animation-delay: 0.18s; }
+.hero-inner > *:nth-child(4) { animation-delay: 0.24s; }
+.hero-inner > *:nth-child(5) { animation-delay: 0.30s; }
+.hero-inner > *:nth-child(6) { animation-delay: 0.36s; }
 </style>
 </head>
 <body>
 
-<!-- TOP NAV -->
-<nav class="top-nav">
-  <div class="brand-name">Robiul<span>Islam</span></div>
-  <button class="nav-switch-btn" onclick="switchPage()">
-    <span id="switchLabel">📊 Marketer</span>
-  </button>
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <span class="nav-brand" onclick="goPage('quran')">Robiul <span>Islam</span></span>
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="tab-quran" onclick="goPage('quran')">📖 Quran</button>
+    <button class="nav-tab" id="tab-english" onclick="goPage('english')">🇬🇧 English</button>
+    <button class="nav-tab" id="tab-arabic" onclick="goPage('arabic')">🌙 Arabic</button>
+    <button class="nav-tab" id="tab-digital" onclick="goPage('digital')">🚀 Marketing</button>
+  </div>
 </nav>
 
-<!-- ===== PAGE 1: QURAN TEACHER ===== -->
-<div id="page-teacher" class="page active">
+<!-- ====================================================
+     PAGE 1: QURAN
+===================================================== -->
+<div id="page-quran" class="page active">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-badge">📖 Quran Teacher</div>
-    <h1>Hafez Robiul Islam</h1>
-    <div class="hero-subtitle">robiulislam.org</div>
-    <p class="hero-desc">
-      I am Hafez Robiul Islam. I teach Quran recitation correctly and help students with Hifz (memorization). Classes run Saturday to Wednesday, each session lasting 50 minutes. Monthly fee: BDT 5,000.
-    </p>
-    <div class="hero-info-cards">
-      <div class="info-card">
-        <div class="ic-label">Class Days</div>
-        Sat – Wed
+  <div class="hero hero-quran">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">📖 Quran Education</div>
+      <h1>Learn to Read the<br>Holy Quran Correctly</h1>
+      <div class="hero-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <p class="hero-desc">
+        I teach authentic Quran recitation with proper Tajweed — from absolute beginners to advanced students. 
+        Learn to read the Quran with confidence, clarity, and correct pronunciation.
+      </p>
+      <div class="info-strip">
+        <div class="info-chip"><span class="ic-dot"></span> Sat – Wed (5 Days/Week)</div>
+        <div class="info-chip"><span class="ic-dot"></span> 50 Min / Class</div>
+        <div class="info-chip gold-dot"><span class="ic-dot"></span> Free Counseling Session</div>
       </div>
-      <div class="info-card">
-        <div class="ic-label">Per Class</div>
-        50 Minutes
-      </div>
-      <div class="info-card">
-        <div class="ic-label">Monthly Fee</div>
-        ৳ 5,000
+      <div class="price-tag">
+        <span class="amount">৳5,000</span>
+        <span class="period">/ Month</span>
       </div>
     </div>
   </div>
 
-  <!-- FORM -->
   <div class="section-wrap">
-    <div class="section-title">30-Minute Free Counseling</div>
-    <div class="section-divider"></div>
+    <div class="section-head">
+      <div class="section-label">What You Will Learn</div>
+      <div class="section-title">Complete Quran Education</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="hb-title">📋 Course at a Glance</div>
+      <ul>
+        <li>Classes: Saturday to Wednesday (5 days a week)</li>
+        <li>Each class is 50 minutes long</li>
+        <li>Monthly fee: BDT 5,000 only</li>
+        <li>Free counseling session available</li>
+        <li>One-on-one personalized attention</li>
+      </ul>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🔤</span>
+        <div class="feature-title">Arabic Alphabet</div>
+        <div class="feature-desc">Master every letter from scratch with proper pronunciation</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🗣️</span>
+        <div class="feature-title">Tajweed Rules</div>
+        <div class="feature-desc">Learn the rules of proper recitation step by step</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📿</span>
+        <div class="feature-title">Fluent Recitation</div>
+        <div class="feature-desc">Read the Quran smoothly with correct makhraj</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏅</span>
+        <div class="feature-title">Hifz Support</div>
+        <div class="feature-desc">Guidance for those who want to memorize the Quran</div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: 8px;">
+      <div class="section-label">Book a Session</div>
+      <div class="section-title">Start with a Free Counseling</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="free-banner">
+      <div class="fb-icon">🎁</div>
+      <div>
+        <div class="fb-text">Free Counseling Session — No Cost</div>
+        <div class="fb-sub">Speak with Robiul Islam before enrolling. Ask anything.</div>
+      </div>
+    </div>
 
     <div class="form-card">
       <div class="form-group">
-        <label>Your Name *</label>
-        <input type="text" id="t-name" placeholder="Enter your full name">
+        <label>Your Full Name *</label>
+        <input type="text" id="q-name" placeholder="Enter your full name">
       </div>
       <div class="form-group">
-        <label>Mobile Number *</label>
-        <input type="tel" id="t-phone" placeholder="+880 XXXXXXXXXX">
+        <label>Phone / WhatsApp Number *</label>
+        <input type="tel" id="q-phone" placeholder="+880 XXXXXXXXXX">
       </div>
       <div class="form-group">
-        <label>What would you like to learn? *</label>
+        <label>Select Course Level</label>
         <div class="radio-group">
           <div class="radio-option">
-            <input type="radio" name="t-course" id="t-hefz" value="I want to do Hifz (memorize Quran)">
-            <label for="t-hefz">📚 I want to do Hifz</label>
+            <input type="radio" name="q-level" id="q-l1" value="Beginner — Learn from Alef">
+            <label for="q-l1">🌱 Beginner</label>
           </div>
           <div class="radio-option">
-            <input type="radio" name="t-course" id="t-basic" value="I want to learn Quran from basics">
-            <label for="t-basic">🌟 Learn from basics</label>
+            <input type="radio" name="q-level" id="q-l2" value="Intermediate — Improve Recitation">
+            <label for="q-l2">📈 Intermediate</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="q-level" id="q-l3" value="Advanced — Tajweed & Hifz">
+            <label for="q-l3">🏆 Advanced</label>
           </div>
         </div>
       </div>
       <div class="form-group">
-        <label>Additional Details (Optional)</label>
-        <textarea id="t-msg" placeholder="Write any questions or special information here..."></textarea>
+        <label>Message (Optional)</label>
+        <textarea id="q-msg" placeholder="Any questions, background, or goals you'd like to share..."></textarea>
       </div>
-
-      <button class="btn-submit-wa" onclick="submitTeacherForm()">
+      <button class="btn-wa" onclick="submitForm('quran')">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Submit & Contact via WhatsApp ✓
+        Book Free Session via WhatsApp
       </button>
-
-      <div class="confirmation-msg" id="t-confirm">
-        <div class="conf-icon">🌙</div>
-        <div class="conf-title">جَزَاكَ اللَّهُ خَيْرًا</div>
-        <p>JazakAllahu Khairan! You will be contacted shortly — In sha Allah.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- SOCIALS -->
-  <div class="social-section">
-    <div class="social-title">Follow Me</div>
-    <div class="social-icons">
-      <a href="https://wa.me/8801733017521" class="social-icon si-wa" title="WhatsApp">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/" class="social-icon si-fb" title="Facebook">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/" class="social-icon si-yt" title="YouTube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/" class="social-icon si-ig" title="Instagram">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/robiulislam-org/" class="social-icon si-li" title="LinkedIn">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/" class="social-icon si-tt" title="TikTok">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      </a>
-      <a href="mailto:org.robiulislam@gmail.com" class="social-icon si-em" title="Email">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.909 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">Robiul Islam</div>
-      <div class="footer-tagline">robiulislam.org • Hafez & Quran Teacher</div>
-      <div class="footer-links">
-        <a href="#" onclick="switchPage(); return false;">📊 Digital Marketer</a>
-        <a href="https://wa.me/8801733017521">📱 WhatsApp</a>
-        <a href="mailto:org.robiulislam@gmail.com">✉️ Email</a>
-        <a href="https://www.linkedin.com/in/robiulislam-org/">🔗 LinkedIn</a>
-        <a href="#">🔒 Privacy Policy</a>
-        <a href="#">↩️ Refund Policy</a>
-        <a href="#">💳 Payment Policy</a>
-      </div>
-      <div class="footer-divider"></div>
-      <div class="footer-bottom">
-        <span>© 2025 Robiul Islam. All rights reserved.</span>
-        <span>robiulislam.org</span>
-      </div>
-    </div>
-  </footer>
-
-</div><!-- end page-teacher -->
-
-
-<!-- ===== PAGE 2: DIGITAL MARKETER ===== -->
-<div id="page-marketer" class="page">
-
-  <!-- HERO -->
-  <div class="hero hero-marketer">
-    <div class="hero-badge">🚀 Digital Marketer</div>
-    <h1>Robiul Islam</h1>
-    <div class="hero-subtitle">Your Online Business Growth Partner</div>
-    <p class="hero-desc">
-      I am a digital marketer who can promote your business online and help it grow in every direction. From SEO to social media, ads management and beyond — I am here for you every step of the way.
-    </p>
-    <div class="services-highlight">
-      <div class="service-chip"><span class="chip-icon">📈</span>Social Media Marketing</div>
-      <div class="service-chip"><span class="chip-icon">🔍</span>SEO Optimization</div>
-      <div class="service-chip"><span class="chip-icon">💰</span>Paid Ads (Meta/Google)</div>
-      <div class="service-chip"><span class="chip-icon">✉️</span>Content Strategy</div>
-      <div class="service-chip"><span class="chip-icon">🌐</span>Brand Building</div>
-      <div class="service-chip"><span class="chip-icon">📊</span>Analytics & Reports</div>
-    </div>
-  </div>
-
-  <!-- FORM -->
-  <div class="section-wrap">
-    <div class="section-title">30-Minute Free Counseling</div>
-    <div class="section-divider"></div>
-
-    <div class="form-card">
-      <div class="form-group">
-        <label>Your Name *</label>
-        <input type="text" id="m-name" placeholder="Enter your full name">
-      </div>
-      <div class="form-group">
-        <label>Mobile Number *</label>
-        <input type="tel" id="m-phone" placeholder="+880 XXXXXXXXXX">
-      </div>
-      <div class="form-group">
-        <label>Your Monthly Budget *</label>
-        <div class="budget-group radio-group">
-          <div class="radio-option">
-            <input type="radio" name="m-budget" id="m-b1" value="BDT 10,000">
-            <label for="m-b1">💼 BDT 10,000</label>
-          </div>
-          <div class="radio-option">
-            <input type="radio" name="m-budget" id="m-b2" value="BDT 25,000">
-            <label for="m-b2">📦 BDT 25,000</label>
-          </div>
-          <div class="radio-option">
-            <input type="radio" name="m-budget" id="m-b3" value="BDT 50,000">
-            <label for="m-b3">🚀 BDT 50,000</label>
-          </div>
-          <div class="radio-option">
-            <input type="radio" name="m-budget" id="m-b4" value="BDT 1,00,000">
-            <label for="m-b4">🏆 BDT 1,00,000</label>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Tell us about your business (Optional)</label>
-        <textarea id="m-msg" placeholder="Describe your business type, goals, or any questions you have..."></textarea>
-      </div>
-
-      <button class="btn-submit-wa" onclick="submitMarketerForm()">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Submit & Contact via WhatsApp ✓
-      </button>
-
-      <div class="confirmation-msg" id="m-confirm">
+      <div class="confirmation-msg" id="q-confirm">
         <div class="conf-icon">🎉</div>
         <div class="conf-title">جَزَاكَ اللَّهُ خَيْرًا</div>
         <p>JazakAllahu Khairan! You will be contacted shortly — In sha Allah.</p>
@@ -671,64 +847,29 @@
     </div>
   </div>
 
-  <!-- SOCIALS — Full Digital Marketer platforms -->
   <div class="social-section">
-    <div class="social-title">Follow Me</div>
+    <div class="social-title">Connect with Me</div>
     <div class="social-icons">
-      <a href="https://wa.me/8801733017521" class="social-icon si-wa" title="WhatsApp">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/" class="social-icon si-fb" title="Facebook">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/" class="social-icon si-ig" title="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/" class="social-icon si-yt" title="YouTube">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/robiulislam-org/" class="social-icon si-li" title="LinkedIn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/" class="social-icon si-tt" title="TikTok">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      </a>
-      <!-- X (Twitter) -->
-      <a href="https://x.com/" class="social-icon si-tw" title="X (Twitter)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <!-- Pinterest -->
-      <a href="https://www.pinterest.com/" class="social-icon si-pin" title="Pinterest">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-      </a>
-      <!-- Telegram -->
-      <a href="https://t.me/" class="social-icon si-tg" title="Telegram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-      </a>
-      <!-- Snapchat -->
-      <a href="https://www.snapchat.com/" class="social-icon si-snap" title="Snapchat">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.299 0-.465-.135-.554-.42-.061-.192-.105-.391-.135-.567-.046-.181-.104-.465-.166-.55-1.888-.298-2.92-.713-3.146-1.297-.03-.063-.045-.15-.045-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg>
-      </a>
-      <!-- GitHub -->
-      <a href="https://github.com/" class="social-icon si-gh" title="GitHub">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      <a href="mailto:org.robiulislam@gmail.com" class="social-icon si-em" title="Email">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.909 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-      </a>
+      <a href="https://wa.me/8801733017521" class="social-icon si-wa" title="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://www.facebook.com/" class="social-icon si-fb" title="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.youtube.com/" class="social-icon si-yt" title="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/" class="social-icon si-ig" title="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.linkedin.com/in/robiulislam-org/" class="social-icon si-li" title="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 .774 23.2 0 22.271V1.729C0 .774.792 0 1.771 0h20.451C23.2 0 24 .774 24 1.729v20.542C24 23.227 23.2 24 22.222 24h.003z"/></svg></a>
+      <a href="mailto:org.robiulislam@gmail.com" class="social-icon si-em" title="Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.909 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">Robiul Islam</div>
-      <div class="footer-tagline">robiulislam.org • Digital Marketer & Growth Strategist</div>
+      <div class="footer-tagline">robiulislam.org · Quran Teacher · English · Arabic · Digital Marketer</div>
       <div class="footer-links">
-        <a href="#" onclick="switchPage(); return false;">📖 Quran Teacher</a>
+        <a href="#" onclick="goPage('quran');return false;">📖 Quran</a>
+        <a href="#" onclick="goPage('english');return false;">🇬🇧 English</a>
+        <a href="#" onclick="goPage('arabic');return false;">🌙 Arabic</a>
+        <a href="#" onclick="goPage('digital');return false;">🚀 Marketing</a>
         <a href="https://wa.me/8801733017521">📱 WhatsApp</a>
         <a href="mailto:org.robiulislam@gmail.com">✉️ Email</a>
-        <a href="https://www.linkedin.com/in/robiulislam-org/">🔗 LinkedIn</a>
         <a href="#">🔒 Privacy Policy</a>
         <a href="#">↩️ Refund Policy</a>
         <a href="#">💳 Payment Policy</a>
@@ -740,74 +881,543 @@
       </div>
     </div>
   </footer>
+</div>
 
-</div><!-- end page-marketer -->
+
+<!-- ====================================================
+     PAGE 2: ENGLISH LANGUAGE
+===================================================== -->
+<div id="page-english" class="page">
+
+  <div class="hero hero-english">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">🇬🇧 English Language</div>
+      <h1>Speak English with<br>Confidence & Fluency</h1>
+      <p class="hero-desc">
+        From basic grammar to advanced conversation — I help you master English for professional, academic, and everyday life. 
+        Real practice. Real progress.
+      </p>
+      <div class="info-strip">
+        <div class="info-chip"><span class="ic-dot"></span> Sat – Wed (5 Days/Week)</div>
+        <div class="info-chip"><span class="ic-dot"></span> 50 Min / Class</div>
+        <div class="info-chip gold-dot"><span class="ic-dot"></span> Free Counseling Session</div>
+      </div>
+      <div class="price-tag">
+        <span class="amount">৳10,000</span>
+        <span class="period">/ Month</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-label">What You Will Learn</div>
+      <div class="section-title">Complete English Program</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="hb-title">📋 Course at a Glance</div>
+      <ul>
+        <li>Classes: Saturday to Wednesday (5 days a week)</li>
+        <li>Each class is 50 minutes long</li>
+        <li>Monthly fee: BDT 10,000 only</li>
+        <li>Free counseling session available</li>
+        <li>Personalized learning plan for each student</li>
+      </ul>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">💬</span>
+        <div class="feature-title">Spoken English</div>
+        <div class="feature-desc">Practice real conversations for work and daily life</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📝</span>
+        <div class="feature-title">Grammar & Writing</div>
+        <div class="feature-desc">Master tenses, sentence structures, and professional writing</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">👂</span>
+        <div class="feature-title">Listening Skills</div>
+        <div class="feature-desc">Train your ear to understand native English clearly</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎯</span>
+        <div class="feature-title">IELTS / Job Prep</div>
+        <div class="feature-desc">Targeted preparation for exams and career interviews</div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: 8px;">
+      <div class="section-label">Book a Session</div>
+      <div class="section-title">Start with a Free Counseling</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="free-banner">
+      <div class="fb-icon">🎁</div>
+      <div>
+        <div class="fb-text">Free Counseling Session — No Cost</div>
+        <div class="fb-sub">Discuss your goals and get a personalized learning plan.</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-group">
+        <label>Your Full Name *</label>
+        <input type="text" id="e-name" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp Number *</label>
+        <input type="tel" id="e-phone" placeholder="+880 XXXXXXXXXX">
+      </div>
+      <div class="form-group">
+        <label>Select Your Level</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" name="e-level" id="e-l1" value="Beginner — Basic English">
+            <label for="e-l1">🌱 Beginner</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="e-level" id="e-l2" value="Intermediate — Improve Fluency">
+            <label for="e-l2">📈 Intermediate</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="e-level" id="e-l3" value="Advanced — IELTS / Professional">
+            <label for="e-l3">🏆 Advanced</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Goal (Optional)</label>
+        <textarea id="e-msg" placeholder="e.g., I want to improve speaking for job interviews, IELTS preparation, etc."></textarea>
+      </div>
+      <button class="btn-wa" onclick="submitForm('english')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book Free Session via WhatsApp
+      </button>
+      <div class="confirmation-msg" id="e-confirm">
+        <div class="conf-icon">🎉</div>
+        <div class="conf-title">Thank You!</div>
+        <p>Your request has been sent! Robiul will contact you shortly on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-section">
+    <div class="social-title">Connect with Me</div>
+    <div class="social-icons">
+      <a href="https://wa.me/8801733017521" class="social-icon si-wa" title="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://www.facebook.com/" class="social-icon si-fb" title="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.youtube.com/" class="social-icon si-yt" title="YouTube"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="mailto:org.robiulislam@gmail.com" class="social-icon si-em" title="Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.909 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Robiul Islam</div>
+      <div class="footer-tagline">robiulislam.org · Quran Teacher · English · Arabic · Digital Marketer</div>
+      <div class="footer-links">
+        <a href="#" onclick="goPage('quran');return false;">📖 Quran</a>
+        <a href="#" onclick="goPage('english');return false;">🇬🇧 English</a>
+        <a href="#" onclick="goPage('arabic');return false;">🌙 Arabic</a>
+        <a href="#" onclick="goPage('digital');return false;">🚀 Marketing</a>
+        <a href="https://wa.me/8801733017521">📱 WhatsApp</a>
+        <a href="mailto:org.robiulislam@gmail.com">✉️ Email</a>
+        <a href="#">🔒 Privacy Policy</a>
+        <a href="#">↩️ Refund Policy</a>
+        <a href="#">💳 Payment Policy</a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2025 Robiul Islam. All rights reserved.</span>
+        <span>robiulislam.org</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ====================================================
+     PAGE 3: ARABIC LANGUAGE
+===================================================== -->
+<div id="page-arabic" class="page">
+
+  <div class="hero hero-arabic">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">🌙 Arabic Language</div>
+      <h1>Master Arabic —<br>The Language of the Quran</h1>
+      <div class="hero-arabic">تَعَلَّمِ الْعَرَبِيَّةَ لِفَهْمِ الْقُرْآنِ</div>
+      <p class="hero-desc">
+        Learn to understand, speak, and read Arabic — the language of the Holy Quran. 
+        Build a deep connection with the Quran and Islamic knowledge through proper Arabic education.
+      </p>
+      <div class="info-strip">
+        <div class="info-chip"><span class="ic-dot"></span> Sat – Wed (5 Days/Week)</div>
+        <div class="info-chip"><span class="ic-dot"></span> 50 Min / Class</div>
+        <div class="info-chip gold-dot"><span class="ic-dot"></span> Free Counseling Session</div>
+      </div>
+      <div class="price-tag">
+        <span class="amount">৳10,000</span>
+        <span class="period">/ Month</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-label">What You Will Learn</div>
+      <div class="section-title">Complete Arabic Program</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="hb-title">📋 Course at a Glance</div>
+      <ul>
+        <li>Classes: Saturday to Wednesday (5 days a week)</li>
+        <li>Each class is 50 minutes long</li>
+        <li>Monthly fee: BDT 10,000 only</li>
+        <li>Free counseling session available</li>
+        <li>Structured curriculum from basics to advanced</li>
+      </ul>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🔤</span>
+        <div class="feature-title">Arabic Alphabet</div>
+        <div class="feature-desc">Learn reading and writing from the very beginning</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📚</span>
+        <div class="feature-title">Quranic Arabic</div>
+        <div class="feature-desc">Understand the language of the Quran deeply</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🗣️</span>
+        <div class="feature-title">Conversational Arabic</div>
+        <div class="feature-desc">Communicate in Modern Standard Arabic with confidence</div>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">✍️</span>
+        <div class="feature-title">Arabic Grammar</div>
+        <div class="feature-desc">Master Nahw and Sarf for proper language understanding</div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: 8px;">
+      <div class="section-label">Book a Session</div>
+      <div class="section-title">Start with a Free Counseling</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="free-banner">
+      <div class="fb-icon">🎁</div>
+      <div>
+        <div class="fb-text">Free Counseling Session — No Cost</div>
+        <div class="fb-sub">Discuss your Arabic learning goals before enrolling.</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-group">
+        <label>Your Full Name *</label>
+        <input type="text" id="a-name" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp Number *</label>
+        <input type="tel" id="a-phone" placeholder="+880 XXXXXXXXXX">
+      </div>
+      <div class="form-group">
+        <label>Select Your Level</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" name="a-level" id="a-l1" value="Beginner — Learn Arabic from Scratch">
+            <label for="a-l1">🌱 Beginner</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="a-level" id="a-l2" value="Intermediate — Quranic Arabic">
+            <label for="a-l2">📖 Quranic</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="a-level" id="a-l3" value="Advanced — Grammar & Fluency">
+            <label for="a-l3">🏆 Advanced</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Goal (Optional)</label>
+        <textarea id="a-msg" placeholder="e.g., I want to understand the Quran directly, or learn conversational Arabic..."></textarea>
+      </div>
+      <button class="btn-wa" onclick="submitForm('arabic')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Book Free Session via WhatsApp
+      </button>
+      <div class="confirmation-msg" id="a-confirm">
+        <div class="conf-icon">🎉</div>
+        <div class="conf-title">جَزَاكَ اللَّهُ خَيْرًا</div>
+        <p>JazakAllahu Khairan! You will be contacted shortly — In sha Allah.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-section">
+    <div class="social-title">Connect with Me</div>
+    <div class="social-icons">
+      <a href="https://wa.me/8801733017521" class="social-icon si-wa" title="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://www.facebook.com/" class="social-icon si-fb" title="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="mailto:org.robiulislam@gmail.com" class="social-icon si-em" title="Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.909 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Robiul Islam</div>
+      <div class="footer-tagline">robiulislam.org · Quran Teacher · English · Arabic · Digital Marketer</div>
+      <div class="footer-links">
+        <a href="#" onclick="goPage('quran');return false;">📖 Quran</a>
+        <a href="#" onclick="goPage('english');return false;">🇬🇧 English</a>
+        <a href="#" onclick="goPage('arabic');return false;">🌙 Arabic</a>
+        <a href="#" onclick="goPage('digital');return false;">🚀 Marketing</a>
+        <a href="https://wa.me/8801733017521">📱 WhatsApp</a>
+        <a href="#">🔒 Privacy Policy</a>
+        <a href="#">↩️ Refund Policy</a>
+        <a href="#">💳 Payment Policy</a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2025 Robiul Islam. All rights reserved.</span>
+        <span>robiulislam.org</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ====================================================
+     PAGE 4: DIGITAL MARKETING
+===================================================== -->
+<div id="page-digital" class="page">
+
+  <div class="hero hero-digital">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">🚀 Digital Marketing</div>
+      <h1>Grow Your Business<br>Online — From Zero to Pro</h1>
+      <p class="hero-desc">
+        I help businesses build a powerful online presence — from website to social media, ads to SEO. 
+        Whether you're starting from scratch or scaling up, I guide you every step of the way.
+      </p>
+      <div class="services-highlight">
+        <div class="service-chip">🌐 Website Design</div>
+        <div class="service-chip">📘 Facebook Marketing</div>
+        <div class="service-chip">🔍 SEO Optimization</div>
+        <div class="service-chip">💰 Paid Ads (Meta/Google)</div>
+        <div class="service-chip">📊 Brand Strategy</div>
+        <div class="service-chip">📈 Business Growth</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-label">What I Offer</div>
+      <div class="section-title">Complete Business Growth Service</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="hb-title">🎯 Who This Is For</div>
+      <ul>
+        <li>Businesses who want to build a strong online presence</li>
+        <li>Entrepreneurs starting from zero with no digital setup</li>
+        <li>Companies who want to scale through smart marketing</li>
+        <li>Anyone who wants consistent online leads and growth</li>
+      </ul>
+    </div>
+
+    <div class="section-head" style="margin-top: 0; margin-bottom: 24px;">
+      <div class="section-label">My Process</div>
+      <div class="section-title">From Basic to Advanced</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Business Setup & Website</div>
+          <div class="step-desc">We start by building your digital home — a professional website that represents your brand and converts visitors into customers.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Social Media Marketing</div>
+          <div class="step-desc">Facebook, Instagram, and other platforms managed and grown with targeted content and community-building strategies.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">SEO & Organic Growth</div>
+          <div class="step-desc">Get found on Google without paying for every click. Long-term organic traffic that builds authority for your brand.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Paid Advertising (Meta / Google)</div>
+          <div class="step-desc">Strategic paid campaigns that bring the right customers at the right time — optimized for maximum ROI.</div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <div class="step-title">Analytics & Scaling</div>
+          <div class="step-desc">Track what works, eliminate what doesn't, and scale your business to the next level with data-driven decisions.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top: 8px;">
+      <div class="section-label">Get a Free Consultation</div>
+      <div class="section-title">Let's Grow Your Business</div>
+      <div class="section-bar"></div>
+    </div>
+
+    <div class="free-banner">
+      <div class="fb-icon">🎁</div>
+      <div>
+        <div class="fb-text">Free 30-Minute Consultation</div>
+        <div class="fb-sub">Tell me about your business. I'll tell you exactly what you need.</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-group">
+        <label>Your Full Name *</label>
+        <input type="text" id="d-name" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp Number *</label>
+        <input type="tel" id="d-phone" placeholder="+880 XXXXXXXXXX">
+      </div>
+      <div class="form-group">
+        <label>Monthly Budget for Marketing</label>
+        <div class="budget-group radio-group">
+          <div class="radio-option">
+            <input type="radio" name="d-budget" id="d-b1" value="BDT 10,000 / Month">
+            <label for="d-b1">💼 BDT 10K</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="d-budget" id="d-b2" value="BDT 25,000 / Month">
+            <label for="d-b2">📦 BDT 25K</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="d-budget" id="d-b3" value="BDT 50,000 / Month">
+            <label for="d-b3">🚀 BDT 50K</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" name="d-budget" id="d-b4" value="BDT 1,00,000+ / Month">
+            <label for="d-b4">🏆 1 Lakh+</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tell me about your business (Optional)</label>
+        <textarea id="d-msg" placeholder="What type of business do you have? What are your goals? Any current challenges?"></textarea>
+      </div>
+      <button class="btn-wa" onclick="submitForm('digital')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Get Free Consultation via WhatsApp
+      </button>
+      <div class="confirmation-msg" id="d-confirm">
+        <div class="conf-icon">🎉</div>
+        <div class="conf-title">Awesome!</div>
+        <p>Your request has been sent! Robiul will get back to you on WhatsApp shortly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-section">
+    <div class="social-title">Follow My Work</div>
+    <div class="social-icons">
+      <a href="https://wa.me/8801733017521" class="social-icon si-wa" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      <a href="https://www.facebook.com/" class="social-icon si-fb" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a href="https://www.instagram.com/" class="social-icon si-ig" title="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a href="https://www.youtube.com/" class="social-icon si-yt" title="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.linkedin.com/in/robiulislam-org/" class="social-icon si-li" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://www.tiktok.com/" class="social-icon si-tt" title="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="mailto:org.robiulislam@gmail.com" class="social-icon si-em" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.909 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Robiul Islam</div>
+      <div class="footer-tagline">robiulislam.org · Quran Teacher · English · Arabic · Digital Marketer</div>
+      <div class="footer-links">
+        <a href="#" onclick="goPage('quran');return false;">📖 Quran</a>
+        <a href="#" onclick="goPage('english');return false;">🇬🇧 English</a>
+        <a href="#" onclick="goPage('arabic');return false;">🌙 Arabic</a>
+        <a href="#" onclick="goPage('digital');return false;">🚀 Marketing</a>
+        <a href="https://wa.me/8801733017521">📱 WhatsApp</a>
+        <a href="mailto:org.robiulislam@gmail.com">✉️ Email</a>
+        <a href="#">🔒 Privacy Policy</a>
+        <a href="#">↩️ Refund Policy</a>
+        <a href="#">💳 Payment Policy</a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2025 Robiul Islam. All rights reserved.</span>
+        <span>robiulislam.org</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
 
 <script>
-  const WA_NUMBER = '8801733017521';
-  let currentPage = 'teacher';
+const WA = '8801733017521';
 
-  function switchPage() {
-    const t = document.getElementById('page-teacher');
-    const m = document.getElementById('page-marketer');
-    const lbl = document.getElementById('switchLabel');
-    if (currentPage === 'teacher') {
-      t.classList.remove('active');
-      m.classList.add('active');
-      lbl.textContent = '📖 Teacher';
-      currentPage = 'marketer';
-    } else {
-      m.classList.remove('active');
-      t.classList.add('active');
-      lbl.textContent = '📊 Marketer';
-      currentPage = 'teacher';
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+function goPage(name) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  // Show target
+  document.getElementById('page-' + name).classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  function buildTeacherMsg() {
-    const name   = document.getElementById('t-name').value.trim();
-    const phone  = document.getElementById('t-phone').value.trim();
-    const course = document.querySelector('input[name="t-course"]:checked');
-    const msg    = document.getElementById('t-msg').value.trim();
-    let text = `🌟 *Quran Education - Free Counseling Request*\n\n`;
-    text += `👤 Name: ${name || '—'}\n`;
-    text += `📱 Number: ${phone || '—'}\n`;
-    text += `📚 Course: ${course ? course.value : '—'}\n`;
-    if (msg) text += `💬 Details: ${msg}`;
-    return encodeURIComponent(text);
-  }
-
-  function buildMarketerMsg() {
-    const name   = document.getElementById('m-name').value.trim();
-    const phone  = document.getElementById('m-phone').value.trim();
-    const budget = document.querySelector('input[name="m-budget"]:checked');
-    const msg    = document.getElementById('m-msg').value.trim();
-    let text = `🚀 *Digital Marketing - Free Counseling Request*\n\n`;
-    text += `👤 Name: ${name || '—'}\n`;
-    text += `📱 Number: ${phone || '—'}\n`;
-    text += `💰 Budget: ${budget ? budget.value : '—'}\n`;
-    if (msg) text += `💬 Business: ${msg}`;
-    return encodeURIComponent(text);
-  }
-
-  function submitTeacherForm() {
-    const name  = document.getElementById('t-name').value.trim();
-    const phone = document.getElementById('t-phone').value.trim();
-    if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
-    window.open(`https://wa.me/${WA_NUMBER}?text=${buildTeacherMsg()}`, '_blank');
-    document.getElementById('t-confirm').style.display = 'block';
-    document.getElementById('t-confirm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
-  function submitMarketerForm() {
-    const name  = document.getElementById('m-name').value.trim();
-    const phone = document.getElementById('m-phone').value.trim();
-    if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
-    window.open(`https://wa.me/${WA_NUMBER}?text=${buildMarketerMsg()}`, '_blank');
-    document.getElementById('m-confirm').style.display = 'block';
-    document.getElementById('m-confirm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+function submitForm(type) {
+  const map = {
+    quran:   { name: 'q-name',  phone: 'q-phone', extra: () => { const c = document.querySelector('input[name="q-level"]:checked'); return c ? `\n📚 Level: ${c.value}` : ''; }, msg: 'q-msg', label: '📖 Quran Education', confirm: 'q-confirm' },
+    english: { name: 'e-name',  phone: 'e-phone', extra: () => { const c = document.querySelector('input[name="e-level"]:checked'); return c ? `\n🎯 Level: ${c.value}` : ''; }, msg: 'e-msg', label: '🇬🇧 English Language', confirm: 'e-confirm' },
+    arabic:  { name: 'a-name',  phone: 'a-phone', extra: () => { const c = document.querySelector('input[name="a-level"]:checked'); return c ? `\n🌙 Level: ${c.value}` : ''; }, msg: 'a-msg', label: '🌙 Arabic Language', confirm: 'a-confirm' },
+    digital: { name: 'd-name',  phone: 'd-phone', extra: () => { const c = document.querySelector('input[name="d-budget"]:checked'); return c ? `\n💰 Budget: ${c.value}` : ''; }, msg: 'd-msg', label: '🚀 Digital Marketing', confirm: 'd-confirm' },
+  };
+  const cfg = map[type];
+  const name = document.getElementById(cfg.name).value.trim();
+  const phone = document.getElementById(cfg.phone).value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  const msg = document.getElementById(cfg.msg).value.trim();
+  let text = `*${cfg.label} — Free Counseling Request*\n\n`;
+  text += `👤 Name: ${name}\n`;
+  text += `📱 Phone: ${phone}`;
+  text += cfg.extra();
+  if (msg) text += `\n💬 Message: ${msg}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`, '_blank');
+  const conf = document.getElementById(cfg.confirm);
+  conf.style.display = 'block';
+  conf.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 </script>
 </body>
 </html>
